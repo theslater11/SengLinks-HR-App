@@ -5,7 +5,6 @@ if name:
   print(f"Hello {name}, please prepare your heart rate data.")
 else:
   print("No name given.")
-  name = input("What is your name?")
 if name == "":
   name = "?"
 hours = ["1","2","3","4","5","6","7","8"]
