@@ -7,6 +7,7 @@ from metrics import window_max, window_average, window_stddev
 from cleaner import filter_nondigits, filter_outliers
 
 import matplotlib.pyplot as plt
+import statistics
 
 
 def run(filename: str) -> None:
@@ -31,12 +32,17 @@ def run(filename: str) -> None:
         list[int], list[int], list[int]: You will return the maximums, averages, and stdevs (in this order).
     """  
     data = []
-
+    data1 =[]
     # open file and read into the `data` list
-    ...
+    data = open(filename)
+    
+    data1.append(filter_outliers(filter_nondigits(data)))
+    
+
+
 
     # return all 3 lists
-    ...
+    return window_max(data1), window_average(data1), window_stddev(data1)
 
 
 if __name__ == "__main__":
