@@ -9,12 +9,12 @@ def filter_nondigits(data: list) -> list:
         list[int]: list of integers, with all non-digit strings removed
     """
     valid_data = []
+    if len(data) == 0 or "":
+        return data
     for rate in data:
         rate = rate.strip('\n')
         if rate.isdigit():
             valid_data.append(int(rate))
-        elif rate == '' or 'None':
-            rate = 'invalid'
         else:
             rate = rate
     return valid_data

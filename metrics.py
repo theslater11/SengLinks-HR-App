@@ -9,11 +9,18 @@ def window_max(data: list, n: int) -> list:
         list[int]: list of maximums from each window (size should be len(data)//6)
     """
     maximums = []
-    for data in range(n):
-            for size in data:
-                maximums.append(max(size))
+    listo = []
+    #Creating a list of numbers in a list until n is reached, then a new list is created and stored. 
+    listo.append(data[:n:]) #gotta be a range function
+    print(listo)
+    #for loop to return max values from each list in a list of lists
+    for size in listo:
+        num = 0
+        if max(size) > num:
+            num = max(size)
+            maximums.append(num)
     return maximums
-result = window_max([1, 2, 3, 4, 5, 6, 7], 4)
+result = window_max([1, 5, 3, 2, 4, 6, 7, 10, 9, 8], 4)
 print(result)
     
 
