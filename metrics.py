@@ -34,10 +34,13 @@ def window_average(data: list, n: int) -> list:
     list[int]: list of averages from each window
 
     '''
-    averages =[]
+    averages = []
     lista = [data[x:x+n] for x in range(0, len(data), n)]
     for avs in lista:
-        averages.append(sum(avs) // len(avs))
+        stick = []
+        for z in avs:
+            stick.append(float(z))
+        averages.append(sum(stick) / len(stick))
     return averages
 
 def window_stddev(data: list, n: int) -> list:
@@ -51,8 +54,15 @@ def window_stddev(data: list, n: int) -> list:
     RETURNS:
     list[int]: list of standard deviations from each window
     '''
+    
     stddev = []
     liste = [data[x:x+n] for x in range(0, len(data), n)]
     for sd in liste:
-        stddev.append(statistics.stdev(sd))
+        gum = []
+        for z in sd:
+            gum.append(float(z))
+        if len(gum) < 2:
+            return stddev
+        else:
+            stddev.append(round(statistics.stdev(gum), 2))
     return stddev
