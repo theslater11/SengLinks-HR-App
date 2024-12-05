@@ -1,3 +1,5 @@
+import statistics
+
 def window_max(data: list, n: int) -> list:
     """
     Calculate maximum value of every "n"-size window
@@ -19,24 +21,38 @@ def window_max(data: list, n: int) -> list:
             num = max(size)
             maximums.append(num)
     return maximums
-result = window_max([1, 5, 3, 2, 4, 6, 7, 10, 9, 8], 4)
-
-print(result)
-    
-
 
 def window_average(data: list, n: int) -> list:
+    '''
+    Calculate the average of every 'n' size window.
+
+    ARGS:
+    data (list[int]): list of integers representing heart rate samples
+    n (int): The size of your window
+
+    RETURNS:
+    list[int]: list of averages from each window
+
+    '''
     averages =[]
     lista = [data[x:x+n] for x in range(0, len(data), n)]
     for avs in lista:
         averages.append(sum(avs) // len(avs))
     return averages
 
-result = window_average([1, 5, 3, 2, 4, 6, 7, 10, 9, 8], 4)
-
-print(result)
-    
-
-
 def window_stddev(data: list, n: int) -> list:
-    pass
+    '''
+    Calculate the standard deviation of every 'n' size window.
+
+    ARGS:
+    data (list[int]): list of integers representing heart rate samples
+    n (int): The size of your window
+
+    RETURNS:
+    list[int]: list of standard deviations from each window
+    '''
+    stddev = []
+    liste = [data[x:x+n] for x in range(0, len(data), n)]
+    for sd in liste:
+        stddev.append(statistics.stdev(sd))
+    return stddev
