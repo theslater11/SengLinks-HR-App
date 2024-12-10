@@ -32,11 +32,24 @@ def run(filename: str) -> None:
         list[int], list[int], list[int]: You will return the maximums, averages, and stdevs (in this order).
     """  
     data = []
-    data1 =[]
-    # open file and read into the `data` list
-    data = open(filename)
     
-    data1.append(filter_outliers(filter_nondigits(data)))
+    # open file and read into the `data` list
+    path = "data/data1.txt"
+    hr_file = open(path)
+    data.append(filter_outliers(filter_nondigits(hr_file)))
+    hr_file = close(path)
+    print(data)
+
+
+
+
+
+
+
+
+
+    
+    
     
 
 
