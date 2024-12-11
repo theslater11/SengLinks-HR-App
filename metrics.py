@@ -10,6 +10,8 @@ def window_max(data: list, n: int) -> list:
     Returns:
         list[int]: list of maximums from each window (size should be len(data)//6)
     """
+    if data == []:
+        return data
     maximums = []
     #Creating a list of numbers in a list until n is reached, saving that list, then creating a new list.
     listo = [data[x:x+n] for x in range(0, len(data), n)]
@@ -34,6 +36,8 @@ def window_average(data: list, n: int) -> list:
 
     '''
     #Both of the next two functions are identical except they are capturing differnt types of data
+    if data == []:
+        return data
     averages = []
     lista = [data[x:x+n] for x in range(0, len(data), n)]
     for avs in lista:
@@ -54,7 +58,8 @@ def window_stddev(data: list, n: int) -> list:
     RETURNS:
     list[int]: list of standard deviations from each window
     '''
-    
+    if data == []:
+        return data
     stddev = []
     liste = [data[x:x+n] for x in range(0, len(data), n)]
     for sd in liste:
