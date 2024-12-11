@@ -3,11 +3,12 @@ The main Python mpdule that combines cleaner and metrics functions in order to
 perform comprehensive analysis
 """
 
+from fileinput import close
 from metrics import window_max, window_average, window_stddev
 from cleaner import filter_nondigits, filter_outliers
 
 import matplotlib.pyplot as plt
-import statistics
+
 
 
 def run(filename: str) -> None:
@@ -34,28 +35,15 @@ def run(filename: str) -> None:
     data = []
     
     # open file and read into the `data` list
-    path = "data/data1.txt"
-    hr_file = open(path)
+    
+    path = filename
+    hr_file = open(path, "r")
+    hr_file = hr_file.read()
     data.append(filter_outliers(filter_nondigits(hr_file)))
-    hr_file = close(path)
     print(data)
-
-
-
-
-
-
-
-
-
-    
-    
-    
-
-
-
+    path = close()
     # return all 3 lists
-    return window_max(data1), window_average(data1), window_stddev(data1)
+    return window_max(data, len(data)//6), window_average(data, len(data)//6), window_stddev(data, len(data)//6)
 
 
 if __name__ == "__main__":
