@@ -10,7 +10,7 @@ def window_max(data: list, n: int) -> list:
     Returns:
         list[int]: list of maximums from each window (size should be len(data)//6)
     """
-    if data == []:
+    if len(data) == 0:
         return data
     maximums = []
     #Creating a list of numbers in a list until n is reached, saving that list, then creating a new list.
@@ -36,7 +36,7 @@ def window_average(data: list, n: int) -> list:
 
     '''
     #Both of the next two functions are identical except they are capturing differnt types of data
-    if data == []:
+    if len(data) == 0:
         return data
     averages = []
     lista = [data[x:x+n] for x in range(0, len(data), n)]
