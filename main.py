@@ -39,7 +39,11 @@ def run(filename: str) -> None:
     path = filename
     hr_file = open(path, "r")
     hr_file = hr_file.read()
-    data.append(filter_outliers(filter_nondigits(hr_file)))
+    if len(hr_file) == 0:
+        return data
+    else:
+        data.append(filter_outliers(filter_nondigits(hr_file)))
+    #print only temp to see how data is being processed
     print(data)
     path = close()
     # return all 3 lists
