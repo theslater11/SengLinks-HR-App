@@ -9,10 +9,11 @@ def filter_nondigits(data: list) -> list:
         list[int]: list of integers, with all non-digit strings removed
     """
     valid_data = []
+    #early return
     if len(data) == 0 or "":
         return data
+    #looping through and stripping, then appending as an int if it isdigit
     for rate in data:
-        
         rate = rate.strip()
         if rate.isdigit():
             valid_data.append(int(rate))
@@ -23,14 +24,13 @@ def filter_nondigits(data: list) -> list:
 
 
 def filter_outliers(data: list) -> list:
-    non_ol =[]
+    non_ol = []
+    #filter loop to remove outliers
     for rate in data:
         if data == []:
             return []
-        if rate <= 30:
-            rate = rate
-        elif rate >= 250:
-            rate = rate
+        if rate <= 30 or rate >= 250:
+            rate = rate 
         else:
             non_ol.append(rate)
     return non_ol
