@@ -42,7 +42,9 @@ def run(filename: str) -> None:
     hr_file = hr_file.split()
     #running one filter function then feeding result directly to other
     data = filter_outliers(filter_nondigits(hr_file))
+    #close the file because my new data is stored locally
     path = close()
+    #plotting each chart and saving to correct image file
     plt.plot(window_max(data, 6))
     plt.savefig('images/maximums.png')
     plt.plot(window_average(data, 6))
