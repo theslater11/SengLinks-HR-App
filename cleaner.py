@@ -12,7 +12,8 @@ def filter_nondigits(data: list) -> list:
     if len(data) == 0 or "":
         return data
     for rate in data:
-        rate = rate.strip()
+        
+        rate = rate.strip("\n")
         if rate.isdigit():
             valid_data.append(int(rate))
         else:
