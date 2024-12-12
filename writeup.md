@@ -14,7 +14,7 @@ The variation of each individual value from the 'standard' value.
 
 Run your `main.py` module and look at the graph labeled "averages.png." Roughly speaking, where do you see the time series experience a significant difference in values along the x-axis? Point out all x-values where you notice a drastic difference in future values.
 
-At 10 heart rate experiances a noticable, sustained increase until 30 is hit. There is a dropoff back to pre-10 levels thereafter. It may be infered 10 to 30 are the users waking hours for that day.
+At 10 heart rate experiances a noticable, sustained increase until 30 is hit. There is a dropoff back to pre-10 levels thereafter.
 
 ## Question 4
 
