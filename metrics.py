@@ -44,7 +44,7 @@ def window_average(data: list, n: int) -> list:
         stick = []
         for z in avs:
             stick.append(float(z))
-        averages.append(sum(stick) / len(stick))
+        averages.append(round(sum(stick) / len(stick), 2))
     return averages
 
 def window_stddev(data: list, n: int) -> list:
