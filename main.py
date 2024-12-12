@@ -37,17 +37,16 @@ def run(filename: str) -> None:
     # open file and read into the `data` list
     
     path = filename
-    hr_file = open(path, "r")
+    hr_file = open(path)
     hr_file = hr_file.read()
-    if len(hr_file) == 0:
-        return data
-    else:
-        data.append(filter_outliers(filter_nondigits(hr_file)))
-    #print only temp to see how data is being processed
+    nd = filter_nondigits(hr_file)
+    ol = filter_outliers(nd)
+    data.append(ol)
     print(data)
+    #print only temp to see how data is being processed
     path = close()
     # return all 3 lists
-    return window_max(data, len(data)//6), window_average(data, len(data)//6), window_stddev(data, len(data)//6)
+    return window_max(data, 6), window_average(data, 6), window_stddev(data, 6)
 
 
 if __name__ == "__main__":
