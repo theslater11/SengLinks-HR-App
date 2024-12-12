@@ -40,6 +40,7 @@ def run(filename: str) -> None:
     hr_file = open(path)
     hr_file = hr_file.read()
     hr_file = hr_file.split()
+    #running one filter function then feeding result directly to other
     data = filter_outliers(filter_nondigits(hr_file))
     path = close()
     # return all 3 lists
