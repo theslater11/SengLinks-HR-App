@@ -20,4 +20,4 @@ At 10 heart rate experiances a noticable, sustained increase until 30 is hit. Th
 
 Do you also notice a corresponding difference in values in the "stdevs.png" graph? If so, do these differences align with the "averages.png" graph? 
 
-The values along the axis' remain unchanged but the charts do not align. There is a similar spike at 10, but seemingly random fluctuations thereafter that the other two charts do not have.
+The values along the axis' remain unchanged but the charts do not align. There is a similar spike at 10, but seemingly random fluctuations after that the other two charts do not have.
