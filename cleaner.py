@@ -34,7 +34,3 @@ def filter_outliers(data: list) -> list:
         else:
             non_ol.append(rate)
     return non_ol
-dta = ["69","74","87","100"]
-x = filter_nondigits(dta)
-print(type(x[0]))
-print(x)
