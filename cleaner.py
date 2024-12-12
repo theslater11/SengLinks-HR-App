@@ -13,7 +13,7 @@ def filter_nondigits(data: list) -> list:
         return data
     for rate in data:
         
-        rate = rate.strip("\n")
+        rate = int(rate.strip("\n"))
         if rate.isdigit():
             valid_data.append(int(rate))
         else:
