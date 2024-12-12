@@ -13,7 +13,7 @@ def filter_nondigits(data: list) -> list:
         return data
     for rate in data:
         
-        rate = int(rate.strip("\n"))
+        rate = rate.strip()
         if rate.isdigit():
             valid_data.append(int(rate))
         else:
@@ -34,3 +34,6 @@ def filter_outliers(data: list) -> list:
         else:
             non_ol.append(rate)
     return non_ol
+dta = ["69","74","87","100"]
+x = filter_nondigits(dta)
+print(type(x[0]))
