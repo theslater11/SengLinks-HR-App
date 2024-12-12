@@ -38,9 +38,7 @@ def run(filename: str) -> None:
     
     path = filename
     hr_file = open(path)
-    hr_file = hr_file.read()
-    print(hr_file)
-    nd = filter_nondigits(hr_file)
+    nd = filter_nondigits(hr_file.read())
     print(nd)
     ol = filter_outliers(nd)
     print(ol)

@@ -37,3 +37,4 @@ def filter_outliers(data: list) -> list:
 dta = ["69","74","87","100"]
 x = filter_nondigits(dta)
 print(type(x[0]))
+print(x)
