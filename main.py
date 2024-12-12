@@ -43,6 +43,12 @@ def run(filename: str) -> None:
     #running one filter function then feeding result directly to other
     data = filter_outliers(filter_nondigits(hr_file))
     path = close()
+    plt.plot(window_max(data, 6))
+    plt.savefig('images/maximums.png')
+    plt.plot(window_average(data, 6))
+    plt.savefig('images/averages.png')
+    plt.plot(window_stddev(data, 6))
+    plt.savefig('images/stdevs.png')
     # return all 3 lists
     return window_max(data, 6), window_average(data, 6), window_stddev(data, 6)
 
