@@ -40,9 +40,7 @@ def run(filename: str) -> None:
     hr_file = open(path)
     hr_file = hr_file.read()
     hr_file = hr_file.split()
-    nd = filter_nondigits(hr_file)
-    ol = filter_outliers(nd)
-    data = ol
+    data = filter_outliers(filter_nondigits(hr_file))
     path = close()
     # return all 3 lists
     return window_max(data, 6), window_average(data, 6), window_stddev(data, 6)
