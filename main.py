@@ -38,12 +38,12 @@ def run(filename: str) -> None:
     
     path = filename
     hr_file = open(path)
-    hr_file = hr_file.read()
-    hr_file = hr_file.split()
+    hr_files = hr_file.read()
+    hr_files = hr_files.split()
     #running one filter function then feeding result directly to other
-    data = filter_outliers(filter_nondigits(hr_file))
+    data = filter_outliers(filter_nondigits(hr_files))
     #close the file because my new data is stored locally
-    hr_file = hr_file.close()
+    hr_file.close()
     #plotting each chart and saving to correct image file
     plt.plot(window_max(data, 6))
     plt.savefig('images/maximums.png')
