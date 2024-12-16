@@ -24,11 +24,21 @@ def filter_nondigits(data: list) -> list:
 
 
 def filter_outliers(data: list) -> list:
+    '''
+    Filter all outliers from list, values over 250 and under 30
+
+    Args:
+        data (list[int]): list of integers representing heart rate samples.
+
+    Returns:
+        list[int]: list of integers, with all outliers removed
+    '''
+    
     non_ol = []
     #filter loop to remove outliers
-    for rate in data:
-        if data == []:
+    if data == []:
             return []
+    for rate in data:
         if rate <= 30 or rate >= 250:
             rate = rate 
         else:
