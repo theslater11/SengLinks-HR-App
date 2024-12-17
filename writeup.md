@@ -8,7 +8,7 @@ User Error or Technical malfunction are likely causes. If source of the error is
 
 While the "averages.png" and "maximums.png" graphs visualize typical values in our time-series data of heart rates and subsequently describe similar trends, the "stdevs.png" graph visualizes the standard deviations, which results in a graph with less apparent trends. In the context of heart rate, what does the standard deviation describe?
 
-The numerical distance of each individual value from a selected value that best represents the center of the dataset. By individually comparing each value to this 'standard', we can chart how much the data varies from point to point.
+The numerical distance of each individual value from a selected value that best represents the center of the dataset. By individually comparing each value to this 'standard', we can chart how much the data varies from point to point. This is what is represented on the chart, rather than the data itself, and why the 
 
 ## Question 3
 

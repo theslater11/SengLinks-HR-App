@@ -47,10 +47,13 @@ def run(filename: str) -> None:
     #plotting each chart and saving to correct image file
     plt.plot(window_max(data, 6))
     plt.savefig('images/maximums.png')
+    plt.close
     plt.plot(window_average(data, 6))
     plt.savefig('images/averages.png')
+    plt.close
     plt.plot(window_stddev(data, 6))
     plt.savefig('images/stdevs.png')
+    plt.close
     # return all 3 lists
     return window_max(data, 6), window_average(data, 6), window_stddev(data, 6)
 
